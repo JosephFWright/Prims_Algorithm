@@ -9,13 +9,13 @@ from functions import update, total_sum
 
 
 def Prims(edge_file_name, start_vertex = 0, draw = False):
-    T = ({start_vertex}, [])
-    G = Weighted_Graph(edge_file_name)
+    T = ({start_vertex}, []) #Empty Spanning Tree
+    G = Weighted_Graph(edge_file_name) #Initialize Graph
     if draw == True:
         G.draw_graph()
     while T[0] != G.vertex_set():
-        T = update(T,G)
-        G.draw_subgraph(T)
+            T = update(T,G)
+            G.draw_subgraph(T)
     print("The minimum spanning tree costs: " +str(total_sum(T,G)))
     return T
 

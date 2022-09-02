@@ -62,9 +62,9 @@ class Weighted_Graph(object):
 
         G = nx.read_edgelist(self.edge_list_file, nodetype=int, data=(('weight',float),))
         e=[(u,v) for (u,v,d) in G.edges(data=True)]
-        pos=nx.spring_layout(G) # positions for all nodes
+        pos=nx.spring_layout(G, seed=7) # positions for all nodes
         nx.draw_networkx_nodes(G,pos,node_size=250) # nodes
-        nx.draw_networkx_edges(G,pos,edgelist=e,width=1) # edges
+        nx.draw_networkx_edges(G,pos,edgelist=e, width=1) # edges
 
         # labels
         labels = nx.get_edge_attributes(G,'weight')
@@ -81,11 +81,11 @@ class Weighted_Graph(object):
         e1=[(u,v) for (u,v,d) in G.edges(data=True)]
         e2= [e for e in e1 if e in H[1]]
         v1 =[v for v in H[0]]
-        pos=nx.spring_layout(G) # positions for all nodes
+        pos=nx.spring_layout(G, seed=7) # positions for all nodes
         nx.draw_networkx_nodes(G,pos,node_size=250) # nodes
         nx.draw_networkx_nodes(G,pos, nodelist = v1,node_size=400)
         nx.draw_networkx_edges(G,pos,edgelist=e1,width=1) # edges
-        nx.draw_networkx_edges(G,pos,edgelist=e2, color = 'red' ,width=5)
+        nx.draw_networkx_edges(G,pos,edgelist=e2,edge_color="r",width=3)
 
         # labels
         labels = nx.get_edge_attributes(G,'weight')

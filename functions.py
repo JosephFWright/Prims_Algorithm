@@ -10,7 +10,7 @@ from Weighted_Graph import *
 
 G = Weighted_Graph('test_graph.txt')
 
-""" This function determines the cost of a edge that is received against the
+""" This function determines the cost(c) of a edge that is received against the
     graph file """
 def c(e,G):
     return G.edge_dict()[e]

@@ -13,13 +13,19 @@ def main():
         print("MST Theory:")
         print("Choose 1 for Prims")
         print("Choose 2 for Kruskals*")
+        print("\nChoose 9 to exit.")
         choice = input("Please make a choice: ")
     if choice == "1":
         submenu()
     elif choice == "2":
         print("*Kruskals is not available right now.")
+    elif choice == "9":
+        print("Thank you. Goodbye!")
+        quit()     
     else:
         print("Not a valid choice!")
+        main()    
+    
 def submenu():
      file = input("Please enter the filename of your graph file: ")
      start = input("Choose a starting vertex: ")
@@ -27,9 +33,10 @@ def submenu():
      if graph == "Y" or graph == "y":
          Prims(str(file), int(start), True)
      elif graph == "N" or graph == "n":
-         Prims(str(file), int(start),)
+         Prims(str(file), int(start), False)
      else:
          print("You didn't choose yes or no. Going back to main menu...")
          main()
-
+     main()
+         
 main()
