@@ -1,6 +1,8 @@
 # Project.CS
-   Class Projects
+ Class Project
+ 
       Final Project for Discrete Mathematics
+       - Takes input of user choice at Menu
        - Takes input of a weighted graph text file
        - Takes an input of starting node vertex
        - Takes input on choice to display graph
